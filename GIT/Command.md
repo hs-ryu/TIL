@@ -69,7 +69,7 @@
 
 
 
-##### *추가
+##### *   추가
 
 - 화면 캡쳐 = 윈도우 + shift + s    -> 캡쳐한 사진 그냥 ctrl + v하면 붙여넣어짐.
 
@@ -77,3 +77,8 @@
 
 - Typora 설치(주석 만들기)
 - git 설치 (옵션 안건들여도 됨)
+
+- git -> github = push
+- github -> git = pull
+
+- bootstrap 
