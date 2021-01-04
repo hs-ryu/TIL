@@ -18,7 +18,7 @@
 #### 1. add
 
 - `git add <추가하고싶은 파일>` 
-  - `git add .` : 현재 폴더의 모든 파일과 폴더를 add
+  - `git add .` : 현재 폴더의 모든 파일과 폴더를 add. 그냥 이거만 써도 될듯
 - working directory => staging area로 파일 이동
 
 
