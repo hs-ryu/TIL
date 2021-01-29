@@ -39,7 +39,7 @@ N이 32850일 경우,
 
 
 #개 씹 노가다 판
-
+'''
 t = int(input())
 for i in range(t):
     n = int(input())
@@ -54,3 +54,21 @@ for i in range(t):
     result[7] += (((((((n % 50000) % 10000) % 5000) % 1000) % 500) % 100) % 50) // 10
     print(f'#{i+1}')
     print(*result)
+'''
+#테스트 몇번 돌릴건지 입력받음
+t = int(input())
+#입력받은 수만큼 테스트
+for i in range(t):
+    #거스를 돈 입력받음
+    n = int(input())
+    #10~50000원 까지 정해놓음
+    a = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+    #개수를 카운트할 수 있도록 리스트 생성
+    b = [0 for i in range(8)]
+    #반복문을 돌려서 얼마짜리를 몇개 거슬러 받을건지 결정
+    for j in range(len(a)):
+        b[j] = n // a[j]
+        n %= a[j]   
+    #출력
+    print(f'#{i+1}')
+    print(*b)
