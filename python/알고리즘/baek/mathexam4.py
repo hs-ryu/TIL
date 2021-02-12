@@ -24,8 +24,8 @@ def s(k,n):
         return n
     if n == 1:
         return 1
+    # x[i][j] = x[i-1][j] + x[i][j-1]
     return s(k-1,n) + s(k,n-1)
-
 
 T = int(input())
 for t in range(1,T+1):
