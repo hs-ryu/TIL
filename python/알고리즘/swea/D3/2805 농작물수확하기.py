@@ -44,10 +44,16 @@ N X N크기의 농장이 있다.
 import sys
 sys.stdin = open('input3.txt')
 
-# 방법1. 전체 합에서 각 모서리에서 부분의 합을 빼버리기
-# 방법2. 규칙 찾아서 더해버리기.   <- 채택
-# N = 7인경우, 2로나눈 몫이 3이므로,  왼쪽 모서리만 보면 3-i + 3-j가 3보다 같거나 작은경우, 마름모 꼴에 해당한다.
+# 방법1. 전체 합에서 각 모서리에서 부분의 합을 빼버리기. 어려울듯?
+# 방법2. N//2의 범위를 빼버린다. 얘로하자
+# N = 7인경우, 2로나눈 몫이 3이니까 왼쪽 공간만 보면 3-i [0,1,2] + 3-j [0,1,2]가 3보다 같거나 작은경우, 마름모 꼴에 해당한다. 미쳤다 현선아.
 # 따라서 모든 모서리를 고려해줘야하니까 절대값으로 계산하면 될듯.
+
+def absolute(x):
+    if x < 0:
+        return x * (-1)
+    return x
+
 
 def suhwack(farm):
     result = 0
@@ -55,12 +61,24 @@ def suhwack(farm):
     for i in range(X):
         for j in range(X):
             k = X // 2
-            if abs(k-i) + abs(k-j) <= k:
+            if absolute(k-i) + absolute(k-j) <= k:
                 result += farm[i][j]
     return result
+
 
 T = int(input())
 for t in range(1,T+1):
     N = int(input())
     farm = [list(map(int, input())) for _ in range(N)]
-    print('#%d %d' %(t,suhwack((farm))))
+    print('#%d %d' % (t, suhwack(farm)))
+
+
+'''
+start, end 포인트를 변수로 설정해서 할수 있다.
+반복문
+s, e = N//2
+반복문(s,e,1)을 통해 돌리고,
+i가 N//2보다 크다면 S에 +1, E에 -1
+그렇지 않다면 S에 -1, E에 +1을 해주면서
+farm에 i,j로 인덱스 접근하여 값들을 더해준다.
+'''

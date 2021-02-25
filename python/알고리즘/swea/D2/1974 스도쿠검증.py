@@ -34,11 +34,12 @@
 (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 '''
 
+
 T = int(input())
 for t in range(1, T+1):
     sdocu = []
     for j in range(9):
-        sdocu.append(list(map(int,input().split())))
+        sdocu.append(list(map(int, input().split())))
     idx = 1
     # x = {i for i in range(1,10)}
     x = {1, 2, 3, 4, 5, 6, 7, 8, 9}
@@ -59,3 +60,4 @@ for t in range(1, T+1):
             idx = 0
             break
     print('#%d %d' %(t, idx))
+
