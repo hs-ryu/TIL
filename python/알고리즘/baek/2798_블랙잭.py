@@ -19,8 +19,31 @@ N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으�
 첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
 '''
 
+def card_sel(x):
+    if x == 3:
+        if sum(select) <= M:
+            result.append(sum(select))
+        return
+    for i in range(N):
+        if check[i] == 0:
+            select[x] = card[i]
+            check[i] = 1
+            card_sel(x + 1)
+            check[i] = 0
 
-
-# 자고 일어나서 다시풀기....
 N, M = map(int, input().split())
 card = list(map(int, input().split()))
+select = [0, 0, 0]
+check = [0] * N
+result = []
+card_sel(0)
+print(max(result))
+
+
+#생각해야할 것.
+#몇 개를 고를지 생각(select 배열의 크기를 몇으로 해야할 지.)
+#check은 card 배열의 크기와 같게.
+#재귀에서 베이스케이스의 조건은 고르는 갯수. 즉 이 문제에서는 카드 3개를 고르니까 3이 됐을때 리턴.
+#반복문에서, i는 0부터 card의 길이만큼 변하며, check 배열을 통해 0이면 사용하고, 1이면 사용하지 않는 방식으로 재귀가 진행됨.
+#따라서 x가 3이 됬을때는 select 배열에 3개가 들어 있을 것이고, 입력받은 M보다 같거나 작은 경우에만 결과 배열에 추가해줌.
+#가장 M과 가까운 값을 출력함.
