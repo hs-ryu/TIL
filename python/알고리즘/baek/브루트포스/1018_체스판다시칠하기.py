@@ -15,3 +15,7 @@
 
 #새삼 못풀겠다 포기 저녁에 다시생각해보기
 N, M = map(int, input().split())
+
+for i in range(N-7):
+    for j in range(M-7):
+        
