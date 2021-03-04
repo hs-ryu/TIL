@@ -14,15 +14,15 @@ def DFS(x):
     stack = []
     visited = [0 for _ in range(N+1)]
     stack.append(x)
+    visited[x] = 1
 
     while stack:
         y = stack.pop()
-        if not visited[y]:
-            visited[y] = 1
-            visit.append(y)
-            for i in AL[y]:
-                if not visited[i]:
-                    stack.append(i)
+        visit.append(y)
+        for i in AL[y]:
+            if not visited[i]:
+                stack.append(i)
+                visited[i] = 1
     return visit
 
 
