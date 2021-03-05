@@ -24,7 +24,6 @@
 #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 정렬된 문자열을 출력한다.
 '''
 
-
 import sys
 sys.stdin = open('GNS_test_input.txt')
 

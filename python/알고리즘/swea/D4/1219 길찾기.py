@@ -55,6 +55,19 @@ def DFS(AL, S):
             if not visited[i]:
                 stack.append(i)
 
+# 재귀로
+'''
+def DFS(v):
+    global cnt
+    cnt += 1
+    visited[V] = 1
+    for next_node in graph[v]:
+        if not visited[next_node]:
+            DFS(next_node)
+'''
+
+
+
 for t in range(1, 11):
     T, N = map(int, input().split())
     S, G = 0, 99
@@ -66,7 +79,11 @@ for t in range(1, 11):
         AL[s].append(e)
     DFS(AL, S)
     print('#%d %d' %(t, 1 if visited[G] else 0))
-    
+
+
+
+
+
     
 #다른방법이 있을까...?
 #시간나면 재귀로도 한번 풀어보기

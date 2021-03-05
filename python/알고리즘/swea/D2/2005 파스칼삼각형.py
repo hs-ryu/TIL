@@ -46,7 +46,7 @@ sys.stdin = open('input.txt')
 # for t in range(1, T+1):
 #     N = int(input())
 #     result = [[1]*i for i in range(1, N+1)]
-#     if N > 2:
+#     if N > 2: #없어도 됨
 #         for i in range(2, N):
 #             for j in range(1, i):
 #                 result[i][j] = result[i-1][j-1] + result[i-1][j]
@@ -59,3 +59,4 @@ T = int(input())
 for t in range(1, T+1):
     N = int(input())
 # 대실패
+

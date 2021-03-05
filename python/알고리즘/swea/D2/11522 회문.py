@@ -62,9 +62,10 @@ for t in range(1,T+1):
     text_grid = []
     for i in range(N):
         text_grid.append(input())
-
+    s = list(zip(*text_grid))
     garo_pel = garo(N, M, text_grid)
-    sero_pel = sero(N, M, text_grid)
-    result = garo_pel + sero_pel
+    sero_pel = sero(N, M, s)
+    print(sero_pel)
+    result = 0
     print('#%d %s' %(t,result))
 

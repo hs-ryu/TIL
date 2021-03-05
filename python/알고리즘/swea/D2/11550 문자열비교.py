@@ -52,7 +52,8 @@ for t in range(1, T+1):
         if str2[i:i+len(str1)] == str1:
             cnt = 1
             break
-    print('#%d %d' %(t, cnt))
+    print('#%d %d' % (t, cnt))
+
 
     # 더 짧은 코드
 
