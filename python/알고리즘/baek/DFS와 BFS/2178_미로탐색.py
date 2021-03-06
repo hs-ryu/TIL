@@ -23,6 +23,8 @@ dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
 
+
+# BFS로 풀기(가장 짧은 거리니까 DFS는 별로임.)
 def BFS(sr, sc):
     Q = [[sr, sc]]
     visited[sr][sc] = 1
@@ -42,4 +44,7 @@ N, M = map(int, input().split())
 miro = [list(map(int, input())) for i in range(N)]
 visited = [[0 for _ in range(M)] for _ in range(N)]
 BFS(0,0)
+print(visited[N-1][M-1])
+visited = [[0 for _ in range(M)] for _ in range(N)]
+DFS(0,0)
 print(visited[N-1][M-1])
