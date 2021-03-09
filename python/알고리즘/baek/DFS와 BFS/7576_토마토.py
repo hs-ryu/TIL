@@ -24,7 +24,7 @@
 만약, 저장될 때부터 모든 토마토가 익어있는 상태이면 0을 출력해야 하고, 토마토가 모두 익지는 못하는 상황이면 -1을 출력해야 한다.
 '''
 
-# 수정 필요 나중에 하기
+# 답은 맞는데 시간초과... 시불
 #최소일수 구하기 : BFS
 
 dr = [-1, 1, 0, 0]
@@ -32,15 +32,33 @@ dc = [0, 0, -1, 1]
 
 def BFS(k):
     Q = [start_point.pop() for _ in range(k)]
-
     while Q:
         cr, cc = Q.pop(0)
         for i in range(4):
             r = cr + dr[i]
             c = cc + dc[i]
-            if 0 <= r < N and 0 <= c < M and tomato[r][c] == 0 and visited[r][c] == 0:
-                tomato[r][c] = 1
-                visited[r][c] = visited[cr][cc] + 1
+            if 0 <= r < N and 0 <= c < M and visited[r][c] == 0:
+                if tomato[r][c] == -1:
+                    visited[r][c] = -1
+                elif tomato[r][c] == 0:
+                    Q.append([r,c])
+                    tomato[r][c] = 1
+                    visited[r][c] = visited[cr][cc] + 1
+
+def dayday(visited):
+    maxV = 0
+    for i in range(N):
+        for j in range(M):
+            if visited[i][j] == -1:
+                continue
+            if visited[i][j] == 0:
+                if tomato[i][j] == -1:
+                    continue
+                result = -1
+                return result
+            elif visited[i][j] > maxV:
+                maxV = visited[i][j]
+    return maxV
 
 M, N = map(int, input().split())
 
@@ -52,6 +70,12 @@ for i in range(N):
     for j in range(M):
         if tomato[i][j] == 1:
             start_point.append([i, j])
+            visited[i][j] = 1
 k = len(start_point)
 BFS(k)
-print(visited)
+result = dayday(visited)
+if result != -1:
+    res = result-1
+else:
+    res = -1
+print(res)
