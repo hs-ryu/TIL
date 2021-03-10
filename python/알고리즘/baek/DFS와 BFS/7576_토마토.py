@@ -54,8 +54,7 @@ def dayday(visited):
             if visited[i][j] == 0:
                 if tomato[i][j] == -1:
                     continue
-                result = -1
-                return result
+                return -1
             elif visited[i][j] > maxV:
                 maxV = visited[i][j]
     return maxV
