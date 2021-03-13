@@ -25,6 +25,69 @@
 각 테스트 케이스마다 땅으로 표현된 모든 칸에 대해서, 물인 칸으로 이동하기 위한 최소 이동 횟수의 합을 출력한다.
 '''
 
+import sys
+sys.stdin = open('10966.txt')
+
+#상하좌우
+dr = [-1, 1, 0, 0]
+dc = [0, 0, -1, 1]
+
+
+
+
+#Runtime error
+
+# 최소거리 : BFS
+# def BFS():
+#     Q = [i for i in water]
+#     total = 0
+#     while Q:
+#         cr, cc = Q.pop(0)
+#         for i in range(4):
+#             r = cr + dr[i]
+#             c = cc + dc[i]
+#             if 0 <= r < N and 0 <= c < M and grid[r][c]== 'L' and visited[r][c] == 0:
+#                 visited[r][c] = visited[cr][cc] + 1
+#                 Q.append([r, c])
+#                 total += visited[r][c]
+#     return total
+
+dr = [-1, 1, 0, 0]
+dc = [0, 0, -1, 1]
+T = int(input())
+for t in range(1, T+1):
+    N, M = map(int, input().split())
+    grid = [list(input()) for _ in range(N)]
+    Q = []
+    for i in range(N):
+        for j in range(M):
+            if grid[i][j] == 'W':
+                Q.append([i, j])
+
+    visited = [[0] * M for _ in range(N)]
+    total = 0
+    while Q:
+        cr, cc = Q.pop(0)
+        for i in range(4):
+            r = cr + dr[i]
+            c = cc + dc[i]
+            if 0 <= r < N and 0 <= c < M and grid[r][c] == 'L' and visited[r][c] == 0:
+                visited[r][c] = visited[cr][cc] + 1
+                Q.append([r, c])
+                total += visited[r][c]
+    print('#%d %d' % (t, total))
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
