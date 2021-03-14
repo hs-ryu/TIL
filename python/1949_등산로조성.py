@@ -71,6 +71,66 @@ N * N 크기의 지도가 주어지고, 최대 공사 가능 깊이 K가 주어�
 출력해야 할 정답은 만들 수 있는 가장 긴 등산로의 길이이다.
 '''
 
+import sys
+sys.stdin = open('1949.txt')
+
+
+dr = [-1, 1, 0, 0]
+dc = [0, 0, -1, 1]
+
+def DFS(r,c):
+    global cut, max_length
+
+    for i in range(4):
+        cr = r + dr[i]
+        cc = c + dc[i]
+        if 0 <= cr < N and 0 <= cc < N:
+            if visited[cr][cc] == 0:
+                if jido[cr][cc] < jido[r][c]:
+                    visited[cr][cc] = visited[r][c] + 1
+                    DFS(cr, cc)
+                    visited[cr][cc] = 0
+                elif cut and jido[cr][cc] - jido[r][c] < K:
+                    now = jido[cr][cc]
+                    jido[cr][cc] = jido[r][c] - 1
+                    visited[cr][cc] = visited[r][c] + 1
+                    cut = 0
+                    DFS(cr, cc)
+                    jido[cr][cc] = now
+                    visited[cr][cc] = 0
+                    cut = 1
+                else:
+                    if visited[r][c] > max_length:
+                        max_length = visited[r][c]
+
+T = int(input())
+for t in range(1, T+1):
+    N, K = map(int, input().split())
+    maxV = 0
+    jido = []
+    for i in range(N):
+        jido_r = list(map(int, input().split()))
+        maxV = max(maxV, max(jido_r))
+        jido.append(jido_r)
+    highst = []
+    for i in range(N):
+        for j in range(N):
+            if jido[i][j] == maxV:
+                highst.append([i,j])
+    visited = [[0] * N for _ in range(N)]
+    cut = 1
+    max_length = 0
+    for i,j in highst:
+        visited[i][j] = 1
+        DFS(i,j)
+        visited[i][j] = 0
+
+    print('#%d %d' % (t, max_length))
+
+
+
+
+
 
 
 
