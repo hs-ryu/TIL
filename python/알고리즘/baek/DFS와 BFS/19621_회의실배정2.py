@@ -12,6 +12,9 @@
 첫째 줄에 회의실에서 회의를 진행할 수 있는 최대 인원을 출력한다.
 '''
 
+
+'''
+# 런타임에러
 def DFS(level, total_people):
     global max_total_people
     # 종료
@@ -24,7 +27,6 @@ def DFS(level, total_people):
     #임의의 회의 K(1≤ K ≤ N)는 회의 K − 1과 회의 K + 1과는 회의 시간이 겹치고 다른 회의들과는 회의 시간이 겹치지 않는다.
         DFS(i, total_people + huei[i][2])
 
-
 N = int(input())
 huei = [list(map(int,input().split())) for _ in range(N)]
 huei.sort(key=lambda x:x[0])
@@ -33,4 +35,19 @@ total_people = 0
 max_total_people = 0
 DFS(0,huei[0][2])
 DFS(1,huei[1][2])
+print(max_total_people)
+'''
+
+def DFS(level, total_people):
+    global max_total_people
+    if level >= N and max_total_people < total_people:
+        max_total_people = total_people
+        return
+    for i in range(level, N):
+        DFS(i+2, total_people + huei[i][2])
+N = int(input())
+huei = [list(map(int, input().split())) for _ in range(N)]
+total_people = 0
+max_total_people = 0
+DFS(0, 0)
 print(max_total_people)
