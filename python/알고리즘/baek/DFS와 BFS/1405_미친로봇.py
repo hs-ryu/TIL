@@ -29,17 +29,26 @@ dc = [1, -1, 0, 0]
 
 
 # 으악 못풀겠다.
-def DFS():
-    
-    
+# 인터넷 참고함
+# 감은 잡았다.
+# 동서남북 = 오왼아위
+dr = [0, 0, 1, -1]
+dc = [1, -1, 0, 0]
+
+def DFS(level, r, c):
+    if level == n:
+        return 1
+    visited[r][c] = 1
+    percent = 0
     for i in range(4):
         cr = r + dr[i]
         cc = c + dc[i]
-        if 0 <= cr < 15 and 0 <= cc < 15 and ((cr,cc) not in visited or visited[(cr,cc)] == 0):
-            visited[(cr,cc)] = 1
-
-
+        if visited[cr][cc]:
+            continue
+        percent += DFS(level+1,cr,cc)*prob[i]
+    visited[r][c] = 0
+    return percent
 n, E, W, S, N = map(int,input().split())
 prob = [E/100, W/100, S/100, N/100]
-visited = {}
-DFS(0,0)
+visited = [[0 for _ in range(2*n + 1)] for _ in range(2 * n + 1)]
+print(DFS(0,n,n))
