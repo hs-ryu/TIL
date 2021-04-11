@@ -22,26 +22,39 @@
 상근이가 모든 국가를 여행하기 위해 타야 하는 비행기 종류의 최소 개수를 출력한다.
 '''
 
+# 접근 : 모든 
+# 트리로 접근하려 했으나, 우리가 그 동안 봤던 트리 구조(?)가 아님.
+# 모든 노드를 방문해야 하므로, DFS나 BFS로 접근하는것이 맞다고 판단함.
+# 가장 적은 종류? -> BFS로 풀어야겠다!
 
-
-# 
 
 
 # BFS 방식으로 체크
-def check():
-    q = [1,0]
-
+def check(x):
+    q = [x]
+    visited[x] = 1
+    cnt = 0
+    while q:
+        c = q.pop()
+        for i in AL[c]:
+            if visited[i] == 0:
+                visited[i] = 1
+                q.append(i)
+                cnt += 1
+    # 다 돌면(모든 국가를 여행하면) 0번 인덱스를 제외한 모든 visited 배열이 1로 되어 있을거임(항상 연결 그래프라고 했으므로)
+    return cnt
     
-
-
 T = int(input())
 for t in range(1,T+1):
     # N : 국가의 수, M = 비행기의 종류
     N, M = map(int, input().split())
-    
-    AL = [[] * (N+1)]
-    visited = [o] * (N+1)
+    AL = [[] for _ in range(N+1)]
+    print(AL)
+    visited = [0] * (N+1)
     for i in range(M):
+        # 주어진 문제에서, 왕복하는 비행기 -> 무방향 그래프
         s, e = map(int, input().split())
         AL[s].append(e)
-    check()
+        AL[e].append(s)
+    result = check(1)
+    print(result)
