@@ -28,14 +28,36 @@ Ex) 알고리즘의 수업시간이 화요일 2, 3교시, 수요일 4, 5교시�
 M줄에 걸쳐서 각 학생들의 들을 수 있는 과목 개수를 출력한다.
 '''
 
+# 접근 : 학생이 수업을 들을수 있는 것들을 체크배열을 통해 확인하고, 가능하면 카운트 해주고, 아니면 패스
+# 현재 내 시간표에서 신청할 수 있는 과목끼리 시간이 겹치더라도 모두 세어야 한다. -> 그냥 반복문으로 확인하는 방법도 될 듯.
+
+
+# 반복문으로만 풀기
 N = int(input())
-cl = []
+classes = []
 for n in range(N):
     line = list(map(int, input().split()))
-    cl.append(line[1:])
+    classes.append(line[1:])
 M = int(input())
-student = []
+students = []
 for m in range(M):
-    line = list(map(int, input().split()))
-    student.append(line[1:])
+    student = set(list(map(int, input().split()))[1:])
+    cnt = 0
+    for cl in classes:
+        for i in cl:
+            if i not in student:
+                break
+        else:
+            cnt += 1
+    print(cnt)
 
+
+
+
+# 비트 연산으로 풀기 못풀겠다
+N = int(input())
+classes = []
+for n in range(N):
+    line = list(map(int, input().split()))
+    classes.append(line[1:])
+    
