@@ -36,11 +36,26 @@ MVP 등급(표기)	등급 기준액	2개월 간의 과금액
 출력
 입력된 MVP 등급을 달성하기 위한 최대 누적 과금액을 만원 단위로 출력한다.
 '''
+# 접근 : 걍 순서대로 계산해서 집어넣자
 
 N = int(input())
 s,g,p,d = map(int, input().split())
-rank_dic = {'B' : 0, 'S' : s, 'G' : g, 'P' : p, 'D' : d}
-
-MVP_rank = input()
-
-# 흠..... 뭐지...
+# 각각의 랭크에 해당하는 점수를 매칭시킨 딕셔너리
+rank_dic = {'S' : s, 'G' : g, 'P' : p, 'D' : d}
+MVP_ranks = input()
+arr = [0] * N
+# 다음 랭크를 매칭시킨 딕셔너리
+next_rank = {'B' : 'S', 'S' : 'G', 'G' : 'P', 'P' : 'D'}
+result = 0
+for i in range(len(MVP_ranks)):
+    # D가 최고 랭크니까
+    if MVP_ranks[i] == 'D':
+        # D의 등급 기준액을 넣어줌. 최대값이니까!
+        arr[i] = rank_dic['D']
+    else:
+        # B,S,G,P이면?
+        # 다음 랭크값 -1이 최대. 근데, 2개월 누적 과금액을 봐야하니까 앞에꺼 만큼 빼줌.
+        arr[i] = (rank_dic[next_rank[MVP_ranks[i]]]-1) - arr[i-1]
+    # print(arr)
+    result += arr[i]
+print(result)
