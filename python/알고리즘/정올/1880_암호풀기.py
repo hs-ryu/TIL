@@ -1,13 +1,13 @@
 decoding = input()
 incoding = input()
 
-dict = {chr(97+i) : decoding[i] for i in range(26)}
-dict[' '] = ' '
+dic = {chr(97+i) : decoding[i] for i in range(26)}
+dic[' '] = ' '
 
 result_str = ''
 for i in range(len(incoding)):
     if incoding[i].isupper():
-        result_str += dict[incoding[i].lower()].upper()
+        result_str += dic[incoding[i].lower()].upper()
     else:
-        result_str += dict[incoding[i]]
+        result_str += dic[incoding[i]]
 print(result_str)
