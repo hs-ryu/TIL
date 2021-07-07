@@ -15,6 +15,7 @@ for i in range(6):
     else:
         if length > max_height:
             max_height = length
+
 result = 0
 for i in range(5):
     area[i] = length_list[i] * length_list[i+1]
