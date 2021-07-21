@@ -25,4 +25,4 @@ def nCr(n, ans, r):
     nCr(n+1,ans,r)
 input_num = list(map(int, input().split()))
 lotto_num = input_num[1:]
-DFS(0,[],6)
+nCr(0,[],6)
