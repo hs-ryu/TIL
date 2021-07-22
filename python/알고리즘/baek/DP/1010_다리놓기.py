@@ -21,13 +21,36 @@
 
 # 다리끼리 겹칠 수 없음.
 # 순열? 조합?
-# m개에서 n개를 뽑는다 -> 조합?
+# m개에서 n개를 뽑는다 -> 조합
 # 시간초과 히히
-from itertools import combinations 
+# from itertools import combinations 
+# T = int(input())
+# for t in range(T):
+#     n, m = map(int, input().split())
+#     m_list = [i for i in range(m)]
+#     x = list(combinations(m_list,n))
+#     print(len(x))
+
+
+# 어렵네 ㅎㅎ. 풀이 참고함.
+# DP
+# EX) 동쪽에 N개가 있고, 서쪽에 1개가 있으면 놓을 수 있는 다리의 경우의 수  -> N
+# 서쪽의 개수와 동쪽의 개수가 같으면 : 1개 가능
+# 서쪽의 개수 : N, 동쪽의 개수 : M이면
+# 서쪽에 N개, 동쪽에 M-1개로 지을 수 있는 다리의 수 + 서쪽에 N-1,동쪽에 M-1개로 지을 수 있는 다리의 수
+
 T = int(input())
 for t in range(T):
     n, m = map(int, input().split())
-    m_list = [i for i in range(m)]
-    x = list(combinations(m_list,n))
-    print(len(x))
-
+    dp = [[0 for _ in range(m+1)] for _ in range(n+1)]
+    for i in range(1, n+1):
+        for j in range(1, m+1):
+            if i == 1:
+                dp[i][j] = j 
+                continue
+            if i == j:
+                dp[i][j] = 1
+            else:
+                if j > i:
+                    dp[i][j] = dp[i][j-1] + dp[i-1][j-1]
+    print(dp[n][m])
