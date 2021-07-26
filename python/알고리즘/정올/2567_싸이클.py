@@ -1,4 +1,3 @@
-
 def calc(num,arr):
     s = num * n % p
     if s in arr:
