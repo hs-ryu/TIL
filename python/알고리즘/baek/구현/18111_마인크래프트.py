@@ -28,3 +28,61 @@ lvalue는 세로 N, 가로 M 크기의 집터를 골랐다.
 첫째 줄에 땅을 고르는 데 걸리는 시간과 땅의 높이를 출력하시오. 답이 여러 개 있다면 그중에서 땅의 높이가 가장 높은 것을 출력하시오.
 
 '''
+
+
+n,m,b = map(int, input().split())
+ground = dict()
+
+# 딕셔너리에 저장. 층수, 개수
+for i in range(n):
+    line = list(map(int,input().split()))
+    for j in line:
+        if j in ground:
+            ground[j] += 1
+        else:
+            ground[j] = 1
+
+
+# 걸리는 시간
+result = 0
+while True:
+    # 가장 높은 층의 층수와 갯수
+    height_max = max(ground.keys())
+    height_cnt = ground[height_max]
+
+    # 평평해 지면 반복 탈출
+    if height_cnt == n * m:
+        break
+    
+    # 빈칸을 채우는데 필요한 블록 수
+    cnt = 0
+    for i,j in ground.items():
+        cnt += (height_max - i) * j
+
+    # 만약 모두 채우는것 보다 가장 윗 층을 없애는게 이득이면 가장 위층을 깍음
+    if cnt > 2 * height_cnt:
+        result += 2 * height_cnt
+        b += height_cnt
+        del ground[height_max]
+        if (height_max-1) in ground:
+            ground[height_max-1] += 1
+        else:
+            ground[height_max-1] = 1
+    
+    # 만약 모두 채울 만큼 블록이 있다면 채움
+    elif cnt <= b:
+        result += cnt
+        break
+    
+    # 아니라면 맨 윗층을 날림.
+    else:
+        result += 2 * height_cnt
+        b += height_cnt
+        del ground[height_max]
+        if (height_max-1) in ground:
+            ground[height_max-1] += 1
+        else:
+            ground[height_max-1] = 1
+
+
+print(result, height_max)
