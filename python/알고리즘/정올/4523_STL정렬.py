@@ -7,7 +7,7 @@ if s == 0:
     if e == n-1:
         result = range_arr2
     else:
-        result = arr[:e] + range_arr2
+        result = range_arr2 + arr[e+1:]
 else:
     if e == n-1:
         result = arr[:s] + range_arr2
