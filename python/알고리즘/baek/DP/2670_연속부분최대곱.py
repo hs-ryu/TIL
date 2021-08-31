@@ -24,5 +24,6 @@ if n > 1:
         # else:
         #     dp[i] = num
     # print(dp)
-print(round(max(dp), 3))
+ans = max(dp)
+print(f'{ans:.3f}')
 
