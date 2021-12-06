@@ -2,13 +2,13 @@ n = int(input())
 stack = []
 answer = []
 flag = 0
-cur = 1
+k = 1
 for i in range(n):
     num = int(input())
-    while cur <= num:
-        stack.append(cur)
+    while k <= num:
+        stack.append(k)
         answer.append("+")
-        cur += 1
+        k += 1
 
     if stack[-1] == num:
         stack.pop()
