@@ -1,20 +1,22 @@
-# 한줄 출력하기 ->  end="" 사용하기
-# 
-
-T = int(input())
-
+from copy import deepcopy
+# import ast
 def search(level, st):
-    if level == n-1:
-        sum_value = eval("".join(st))
-        if sum_value == 0:
-            for i in range(len(st)):
-                if st[i] == "":
-                    print(" ", end="")
-                elif i == len(st) - 1:
-                    print(st[i])
-                else:
-                    print(st[i], end="")
 
+    # 그만
+    if level == n-1:
+        # print(st)
+        string = "".join(st)
+        # print(string)
+        # x = re.split('+',string)
+        # print(x)
+        # sum_value = ast.literal_eval("".join(st))
+        sum_value = eval(string)
+        if sum_value == 0:
+            # print(st)
+            result = deepcopy(st)
+            answers.append(result)
+
+    # 재귀 ㄱㄱ
     else:
         st.insert(level * 2 + 1, '')
         search(level+1, st)
@@ -29,12 +31,21 @@ def search(level, st):
         st.pop(level*2 + 1)
 
 
-for _ in range(T):
+t = int(input())
+for _ in range(t):
     n = int(input())
-    arr = [str(i) for i in range(1,n+1)]
+    arr = [str(i) for i in range(1, n+1)]
+    answers=[]
+
     search(0, arr)
+    # print(answers)
+    if len(answers) > 0:
+        for i in range(len(answers)):
+            answer = ''
+            for j in range(len(answers[i])):
+                    if answers[i][j] == "":
+                        answer += ' '
+                    else:
+                        answer += answers[i][j]
+            print(answer)
     print("")
-
-
-
-# print(eval('4+5+'))
