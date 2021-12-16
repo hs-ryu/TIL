@@ -2,6 +2,14 @@
 # Kruskal
 # 메모리 초과
 
+from sys import stdin
+input = stdin.readline
+
+# def find_set(p, x):
+#     if x != p[x]:
+#         p[x] = find_set(p, p[x])
+#     return p[x]
+
 def find_head(x):
     while head[x] != x:
         x = head[x]
