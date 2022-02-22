@@ -1,6 +1,3 @@
-# 시간초과
-
-
 from collections import deque
 
 # 왼, 왼위, 위, 오위, 오, 오아, 아, 왼아
@@ -15,7 +12,7 @@ def action(d,s):
     # print(cloud)
     # 구름 이동
     next_cloud = deque()
-    check_cloud = deque()
+    # check_cloud = deque()
     while cloud:
         cr,cc = cloud.popleft()
         nr = cr + dr[d] * s
@@ -37,8 +34,9 @@ def action(d,s):
         # print(d,s)
         # print(cr,cc,nr,nc)
         basket[nr][nc] += 1
+        visited[nr][nc] = 1
         next_cloud.append([nr,nc])
-        check_cloud.append([nr,nc])
+        # check_cloud.append([nr,nc])
     
     # 대각선 체크해서 물 더하기
     while next_cloud:
@@ -55,7 +53,7 @@ def action(d,s):
     # 구름 만들기
     for i in range(n):
         for j in range(n):
-            if basket[i][j] >= 2 and [i,j] not in check_cloud:
+            if basket[i][j] >= 2 and not visited[i][j]:
                 cloud.append([i,j])
                 basket[i][j] -= 2
     
@@ -82,6 +80,7 @@ cloud.append([n-1,1])
 cloud.append([n-2,0])
 cloud.append([n-2,1])
 for i in range(m):
+    visited = [[0 for _ in range(n)] for _ in range(n)]
     action(command[i][0], command[i][1])
     # print(basket)
 
