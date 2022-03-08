@@ -97,13 +97,13 @@ else:
         for i in range(1,s[0]-1):
             for j in range(i+1,s[0]):
                 if n in set(range(i,j+1)):
-                    print(i,j)
+                    # print(i,j)
                     result += 1
     # 아니면 n이 집합 범위 내에 있는 경우임. 이때 위에서 찾은 idx를 활용해서 범위 설정해준다.
     else:
         for i in range(s[idx]+1,s[idx+1]-1):
             for j in range(i+1,s[idx+1]):
                 if n in set(range(i,j+1)):
-                    print(i,j)
+                    # print(i,j)
                     result += 1
     print(result)
