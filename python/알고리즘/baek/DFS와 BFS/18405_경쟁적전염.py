@@ -86,6 +86,7 @@ now_time = 0
 while now_time < target_time:
     now_time += 1
     parasite()
+    # 밑에 얘 없으면 시간초과
     if arr[target_x-1][targer_y-1]:
         break
 
