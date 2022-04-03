@@ -1,0 +1,4 @@
+-- 중복없이 가져오기 : DISTINCT 키워드 사용
+-- NULL 확인할 때는 비교 연산자 불가능. 즉, NAME != NULL 불가능
+
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS WHERE NAME IS NOT NULL
