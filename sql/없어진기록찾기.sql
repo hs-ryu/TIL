@@ -1,0 +1,15 @@
+-- join : 둘 이상의 테이블틀 연결해서 데이터를 검색하는 방법
+-- A INNER JOIN B : A와 B의 공통 부분만 SELECT 됨
+-- A LEFT JOIN B : 왼쪽, 오른쪽 부분집합
+-- A OUTER JOIN B : 합집합
+
+
+-- ANIMAL_OUTS 와 ANIMAL_INS 를 ANIMAL_ID가 같은 것을 기준으로 LEFT OUTER JOIN 하면, 
+-- ANIMAL_OUTS 테이블에 존재하는 ANIMAL_ID와, 그 ANIMAL_ID와 같은 ANIMAL_INS 테이블의 데이터가 옆에 같이 연결될 것임.
+-- 근데, ANIMAL_ID가 같은 값이 ANIMAL_INS 테이블에 존재하지 않는다면, NULL 값으로 연결될 것
+
+SELECT ANIMAL_OUTS.ANIMAL_ID, ANIMAL_OUTS.NAME 
+FROM ANIMAL_OUTS LEFT OUTER JOIN ANIMAL_INS
+ON ANIMAL_OUTS.ANIMAL_ID = ANIMAL_INS.ANIMAL_ID
+WHERE ANIMAL_INS.ANIMAL_ID IS NULL
+ORDER BY ANIMAL_ID
