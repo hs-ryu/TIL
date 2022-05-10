@@ -14,6 +14,12 @@ def play(r,c,new_fishs, new_dir,new_info,temp_result):
             # 자리 바까주기. 방향도
             new_fishs[move_one[2]][move_one[3]], new_fishs[nr][nc] = new_fishs[nr][nc], new_fishs[move_one[2]][move_one[3]]
             new_dir[move_one[2]][move_one[3]], new_dir[nr][nc] = new_dir[nr][nc], new_dir[move_one[2]][move_one[3]]
+            # new_info도 바까주기.
+            for i in range(len(new_info)):
+                if new_info[i][0] == new_fishs[nr][nc]:
+                    pass
+        
+        
         else:
             pass
 
