@@ -1,3 +1,7 @@
+def DFS():
+    pass
+
+
 def BFS(x):
     q = graphs[x][:]
     for i in range(len(q)):
