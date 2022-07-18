@@ -2,7 +2,7 @@ import sys
 from pprint import pprint
 sys.stdin = open('sample_input.txt')
 
-
+s = 0
 
 def left_to_right(line):
     global cnt_1
