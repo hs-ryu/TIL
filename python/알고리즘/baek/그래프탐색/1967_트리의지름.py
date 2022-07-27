@@ -39,11 +39,11 @@ for i in range(n+1):
     if node_dist[i] == max_v:
         start_nodes.append(i)
 
-
 result = 0
 for i in range(len(start_nodes)):
     node_dist = [0] * (n+1)
     visited = [0] * (n+1)
+    visited[start_nodes[i]] = 1
     start_node = start_nodes[i]
     search_most_distance(start_node)
     if max(node_dist) > result:
