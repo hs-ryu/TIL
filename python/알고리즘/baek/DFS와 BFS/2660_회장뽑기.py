@@ -19,27 +19,29 @@ while True:
         break
     friends[n1].append([n2,1])
     friends[n2].append([n1,1])
-print(friends)
 
 total_cnt = 0
-max_v = n
+min_v = n
 results = []
 for i in range(1,n+1):
     visited = [0] * (n+1)
     visited[i] = 1
     check(i)
-    print(visited)
+    # 다 연결 되어 있는지 확인.
     temp_cnt = 0
+    # 몇번째 만에 연결되는지 확인.
     temp_v = 0
     for j in range(1,n+1):
         if visited[j]:
             temp_cnt += 1
             if temp_v < visited[j]:
-                temp_v = visited[j]  
+                temp_v = visited[j]
     if total_cnt <= temp_cnt:
         total_cnt = temp_cnt
-        if temp_v == max_v:
+        if temp_v == min_v:
             results.append(i)
-        elif temp_v < max_v:
+        elif temp_v < min_v:
+            min_v = temp_v
             results = [i]
-print(results)
+print(min_v, len(results))
+print(*results)
