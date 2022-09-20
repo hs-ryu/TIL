@@ -9,7 +9,7 @@ board = [[0 for _ in range(n)] for _ in range(n)]
 for i in range(k):
     board[apples[i][0]-1][apples[i][1]-1] = 2
 board[0][0] = 1
-print(board)
+# print(board)
 snake_length = 1
 
 # 최초에는 길이가 1이니까
