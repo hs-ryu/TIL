@@ -9,6 +9,7 @@ def action(sr,sc):
 
     flag = True
     start_points = 0,0
+    
     while q:
         cr,cc = q.pop()
         for i in range(4):
