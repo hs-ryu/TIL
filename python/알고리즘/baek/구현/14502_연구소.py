@@ -1,14 +1,15 @@
 # 시간초과.. 그럴거 같긴함.
 # 재귀가 너무 많이 돈다. 어떻게 줄일 수 있지?
+from collections import deque
 
 dr = [-1,1,0,0]
 dc = [0,0,-1,1]
 def DFS():
     temp_industry = [industry[i][:] for i in range(n)]
-    q = birus[:]
+    q = deque(birus[:])
     visited = [[0] * m for _ in range(n)]
     while q:
-        cr,cc = q.pop(-1)
+        cr,cc = q.popleft()
         visited[cr][cc] = 1
         for i in range(4):
             nr = cr + dr[i]
@@ -53,13 +54,7 @@ for i in range(n):
 
 total_possible_cnt = 0
 
-for i in range(n):
-    for j in range(m):
-        if industry[i][j] == 0:
-            wall_cnt = 1
-            industry[i][j] = 1
-            act(wall_cnt)
-            industry[i][j] = 0
+act(0)
 
 print(total_possible_cnt)
 
