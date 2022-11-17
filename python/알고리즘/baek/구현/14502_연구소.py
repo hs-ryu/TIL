@@ -1,5 +1,4 @@
-# 시간초과.. 그럴거 같긴함.
-# 재귀가 너무 많이 돈다. 어떻게 줄일 수 있지?
+# pypy 통과, python 시간초과
 from collections import deque
 
 dr = [-1,1,0,0]

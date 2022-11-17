@@ -10,7 +10,7 @@ n,m,k = map(int,input().split())
 # r,c에 대해 0,0 -> r,c 까지 가는 최단 경로 + r,c 에서 n,m 까지 가는 최단 경로
 if k != 0:
 
-    r = k // m
+    r = (k-1) // m
     c = (k-1) % m
 
     factorial_r = 1
@@ -22,6 +22,7 @@ if k != 0:
         factorial_c *= i
     for i in range(1,r+c+1):
         factorial_rc *= i
+    # print(factorial_r, factorial_c, factorial_rc)
     route1 = factorial_rc // (factorial_r * factorial_c)
 
     factorial_r = 1
