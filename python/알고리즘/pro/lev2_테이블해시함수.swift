@@ -24,3 +24,18 @@ func solution(_ data:[[Int]], _ col:Int, _ row_begin:Int, _ row_end:Int) -> Int 
     
     return result
 }
+
+
+// 다른 사람의 풀이
+
+import Foundation
+
+func solution(_ data:[[Int]], _ col:Int, _ row_begin:Int, _ row_end:Int) -> Int {
+    // 조건 2가지일때 -> 3항 연산자. 이거 괜찮네.
+    var data = data.sorted { $0[col-1] == $1[col-1] ? $0[0] > $1[0] : $0[col-1] < $1[col-1] }
+    var numbers = [Int]()
+    // 맵 함수로 배열 다시 만들어 주고 -> reduce로 합쳐주고 numbers에 넣어주기.
+    for mod in row_begin-1...row_end-1 { numbers.append(data[mod].map { $0 % (mod + 1) }.reduce(0, +)) }
+    // reduce 함수에 바로 xor해주는거. 넘 좋다.
+    return numbers.reduce(0, ^)
+}
