@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E13552E29968DEF00B745E9 /* lev2_둘만의암호.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev2_둘만의암호.swift"; sourceTree = "<group>"; };
 		0E29FA2C2994E9C60011EF16 /* Programmers */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Programmers; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E29FA2F2994E9C60011EF16 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		0E29FA362994E9DB0011EF16 /* lev2_무인도여행.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev2_무인도여행.swift"; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 			children = (
 				0E29FA2F2994E9C60011EF16 /* main.swift */,
 				0E29FA362994E9DB0011EF16 /* lev2_무인도여행.swift */,
+				0E13552E29968DEF00B745E9 /* lev2_둘만의암호.swift */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
