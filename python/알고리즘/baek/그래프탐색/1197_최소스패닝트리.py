@@ -1,3 +1,4 @@
+# 크러스컬
 def find(x):
     if x != graph[x]:
         graph[x] = find(graph[x])
