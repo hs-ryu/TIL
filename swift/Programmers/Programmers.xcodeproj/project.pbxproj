@@ -71,19 +71,19 @@
 			isa = PBXGroup;
 			children = (
 				0E29FA2F2994E9C60011EF16 /* main.swift */,
-				0E135530299B80E100B745E9 /* lev2_뒤에있는큰수찾기.swift */,
 				0E135532299D109200B745E9 /* lev1_크기가작은부분문자열.swift */,
 				0E135570299E5B5200B745E9 /* lev1_카드뭉치.swift */,
-				0E135572299FAC7300B745E9 /* lev2_숫자변환하기.swift */,
 				0EF2DD6D29AA2ABE00A6F569 /* lev1_대충만든자판.swift */,
 				0E9FAABF29AB671D0079A4D6 /* lev1_콜라문제.swift */,
 				0E9FAAC129ACA6990079A4D6 /* lev1_삼총사.swift */,
 				0E0727C329ADAF0C0089BBE1 /* lev1_숫자짝꿍.swift */,
 				0E0727C529B1B37A0089BBE1 /* lev1_바탕화면정리.swift */,
 				0E9E361329B35EFD007B9307 /* lev2_덧칠하기.swift */,
-				0E6751F929B4809F00C83604 /* lev3_연속펄스부분수열의합.swift */,
+				0E135530299B80E100B745E9 /* lev2_뒤에있는큰수찾기.swift */,
 				0E29FA362994E9DB0011EF16 /* lev2_무인도여행.swift */,
+				0E135572299FAC7300B745E9 /* lev2_숫자변환하기.swift */,
 				0E13552E29968DEF00B745E9 /* lev2_둘만의암호.swift */,
+				0E6751F929B4809F00C83604 /* lev3_연속펄스부분수열의합.swift */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
