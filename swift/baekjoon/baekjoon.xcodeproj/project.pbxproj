@@ -28,6 +28,7 @@
 		0E29FA1D2990EFD60011EF16 /* 16194_카드구매하기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "16194_카드구매하기.swift"; sourceTree = "<group>"; };
 		0E29FA1F299227900011EF16 /* 15489_파스칼삼각형.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "15489_파스칼삼각형.swift"; sourceTree = "<group>"; };
 		0E29FA212993866B0011EF16 /* 9375_패션왕신해빈.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "9375_패션왕신해빈.swift"; sourceTree = "<group>"; };
+		0EFF0ED929BAF56700523D1A /* 1543_문서검색.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1543_문서검색.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				0E29FA162990EFA60011EF16 /* main.swift */,
+				0EFF0ED929BAF56700523D1A /* 1543_문서검색.swift */,
 				0E29FA212993866B0011EF16 /* 9375_패션왕신해빈.swift */,
 				0E29FA1D2990EFD60011EF16 /* 16194_카드구매하기.swift */,
 				0E29FA1F299227900011EF16 /* 15489_파스칼삼각형.swift */,
