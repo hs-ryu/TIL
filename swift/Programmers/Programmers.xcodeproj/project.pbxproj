@@ -40,6 +40,7 @@
 		0E9E8A2129F40460008AFFFF /* lev2_두원사이의정수쌍.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev2_두원사이의정수쌍.swift"; sourceTree = "<group>"; };
 		0E9FAABF29AB671D0079A4D6 /* lev1_콜라문제.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev1_콜라문제.swift"; sourceTree = "<group>"; };
 		0E9FAAC129ACA6990079A4D6 /* lev1_삼총사.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev1_삼총사.swift"; sourceTree = "<group>"; };
+		0ECC654B29F53DAC00BDF4BA /* lev2_당구연습.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev2_당구연습.swift"; sourceTree = "<group>"; };
 		0EF2DD6D29AA2ABE00A6F569 /* lev1_대충만든자판.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "lev1_대충만든자판.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 				0E49275129EC0D5E0035B9F2 /* lev1_공원산책.swift */,
 				0E33F03029EED5D400066871 /* lev2_광물캐기.swift */,
 				0E9E8A2129F40460008AFFFF /* lev2_두원사이의정수쌍.swift */,
+				0ECC654B29F53DAC00BDF4BA /* lev2_당구연습.swift */,
 			);
 			path = Programmers;
 			sourceTree = "<group>";
