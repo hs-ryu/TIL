@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E29FA172990EFA60011EF16 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29FA162990EFA60011EF16 /* main.swift */; };
-		0EE6B8A42A1A2BBF007F9AF8 /* 25644_최대상승.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6B8A32A1A2BBF007F9AF8 /* 25644_최대상승.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +34,7 @@
 		0E29FA212993866B0011EF16 /* 9375_패션왕신해빈.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "9375_패션왕신해빈.swift"; sourceTree = "<group>"; };
 		0E2B60D829C6C3B200F5D15F /* 1912_연속합.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1912_연속합.swift"; sourceTree = "<group>"; };
 		0E6B35DE29F02CE200DAC362 /* 1110_하얀칸.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1110_하얀칸.swift"; sourceTree = "<group>"; };
+		0E93A3142A1B8FB200FFCABB /* 10867_중복빼고정렬하기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "10867_중복빼고정렬하기.swift"; sourceTree = "<group>"; };
 		0EE6B8A32A1A2BBF007F9AF8 /* 25644_최대상승.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "25644_최대상승.swift"; sourceTree = "<group>"; };
 		0EFF0ED929BAF56700523D1A /* 1543_문서검색.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1543_문서검색.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +81,7 @@
 				0E29FA1D2990EFD60011EF16 /* 16194_카드구매하기.swift */,
 				0E29FA1F299227900011EF16 /* 15489_파스칼삼각형.swift */,
 				0E1C6B1829C2BF91003D682A /* 1660_캡틴이다솜.swift */,
+				0E93A3142A1B8FB200FFCABB /* 10867_중복빼고정렬하기.swift */,
 			);
 			path = baekjoon;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE6B8A42A1A2BBF007F9AF8 /* 25644_최대상승.swift in Sources */,
 				0E29FA172990EFA60011EF16 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
