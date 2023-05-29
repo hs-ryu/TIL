@@ -8,32 +8,33 @@
 import Foundation
 
 var n: Int = Int(readLine()!)!
-var stack:[Character] = []
 var str:[Character] = Array(readLine()!)
+var lCnt = 0
+var sCnt = 0
 var answer = 0
 for i in 0..<str.count {
     var temp = str[i]
-    
     if temp == "L" {
-        stack.append(contentsOf: "L")
+        lCnt += 1
     } else if temp == "S" {
-        stack.append(contentsOf: "S")
+        sCnt += 1
     } else if temp == "R" {
-        var x = stack.popLast()
-        if let p = x {
-            if p == "L" {
-                answer += 1
-            }
+        if lCnt > 0 {
+            answer += 1
+            lCnt -= 1
+        } else {
+            break
         }
     } else if temp == "K" {
-        var x = stack.popLast()
-        if let p = x {
-            if p == "S" {
-                answer += 1
-            }
+        if sCnt > 0 {
+            answer += 1
+            sCnt -= 1
+        } else {
+            break
         }
     } else {
         answer += 1
     }
+    
 }
 print(answer)
