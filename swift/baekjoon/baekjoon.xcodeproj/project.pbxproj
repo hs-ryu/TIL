@@ -38,6 +38,7 @@
 		0E6B35DE29F02CE200DAC362 /* 1110_하얀칸.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1110_하얀칸.swift"; sourceTree = "<group>"; };
 		0E93A3142A1B8FB200FFCABB /* 10867_중복빼고정렬하기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "10867_중복빼고정렬하기.swift"; sourceTree = "<group>"; };
 		0EE6B8A32A1A2BBF007F9AF8 /* 25644_최대상승.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "25644_최대상승.swift"; sourceTree = "<group>"; };
+		0EE6D7D22A27783F002CA0CC /* 25706_자전거묘기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "25706_자전거묘기.swift"; sourceTree = "<group>"; };
 		0EFF0ED929BAF56700523D1A /* 1543_문서검색.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1543_문서검색.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +74,7 @@
 			children = (
 				0E29FA162990EFA60011EF16 /* main.swift */,
 				0E660D542A1F9349004F4049 /* 25497_기술연계마스터임스.swift */,
+				0EE6D7D22A27783F002CA0CC /* 25706_자전거묘기.swift */,
 				0E4251E72A1CECCD00EEA3EC /* 23827_수열.swift */,
 				0EE6B8A32A1A2BBF007F9AF8 /* 25644_최대상승.swift */,
 				0E2B60D829C6C3B200F5D15F /* 1912_연속합.swift */,
