@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0DA6312A58455300D87713 /* 15988_1,2,3더하기3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "15988_1,2,3더하기3.swift"; sourceTree = "<group>"; };
 		0E1C6B1629C03BED003D682A /* 1764_듣보잡.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1764_듣보잡.swift"; sourceTree = "<group>"; };
 		0E1C6B1829C2BF91003D682A /* 1660_캡틴이다솜.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1660_캡틴이다솜.swift"; sourceTree = "<group>"; };
 		0E1C6B1A29C44EB3003D682A /* 1895_필터.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1895_필터.swift"; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0E29FA162990EFA60011EF16 /* main.swift */,
+				0E0DA6312A58455300D87713 /* 15988_1,2,3더하기3.swift */,
 				0EB958E42A543ED20009F500 /* 16953_A->B.swift */,
 				0ED07BC22A5195FE0097F35E /* 15654_N과M.swift */,
 				0EBC99962A49B4F3004BB3E2 /* 14889_스타트와링크.swift */,
