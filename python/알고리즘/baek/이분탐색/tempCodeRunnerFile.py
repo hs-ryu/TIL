@@ -1,0 +1,1 @@
+# print(ATK_copy, MaxHP, CurHP,  l, r, isDie)

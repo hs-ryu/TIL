@@ -30,9 +30,11 @@ while l <= r:
             # 용의 피가 30, 용사의 데미지가 30 -> 30 // 30 = 1 이지만, 딱뎀으로 죽일 수 있으니깐, 안맞음.
             # 용사의 피가 깎이는 횟수 = 용의 피 // 용사의 데미지
 
-            CurHP -= a * ((h // ATK_copy)) if h % ATK_copy else a * ((h // ATK_copy)-1) # 만약 딱댐으로 죽일 경우 -> 
+            CurHP -= a * ((h // ATK_copy)) if h % ATK_copy else a * ((h // ATK_copy)-1) # 만약 딱댐으로 죽일 경우는 한대 덜 때린다.
+            # print(CurHP)
             if CurHP <= 0:
                 isDie = True
+                break
             
         # print(ATK_copy, MaxHP, CurHP,  l, r, isDie)
     # print("-----------")
@@ -57,4 +59,4 @@ print(result)
 # 피 43, 공격력 6
 # 3반벙 입장 = 17번 때림 -> 16번 맞음 - 48 깍임
 # 뒤져야하는데?
-# print(1000000000000 - 1000000)
+print(1000000000000 - 1000000)
