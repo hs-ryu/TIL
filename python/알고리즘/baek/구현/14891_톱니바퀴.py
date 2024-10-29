@@ -1,27 +1,3 @@
-# sawtooths = [list(input()) for _ in range(4)]
-# print(sawtooths)
-# k = int(input())
-
-# for _ in range(k):
-# 	idx, dir = map(int,input().split())
-# 	idx -= 1
-# 	# idx에 따라 회전시킬 놈 찾기.
-# 	t1 = idx - 1
-# 	t2 = idx + 1
-
-# 	# 왼쪽놈들 체크
-# 	while t1 >= 0:
-
-# 		t1 -= 1
-	
-
-# 	# 오른쪽 놈들 체크
-# 	while t2 < 4:
-
-# 		t2 += 1
-		
-# 	# 돌려야 할 놈들 돌리기.
-
 def rotate(i, dir):
     #시계방향
     if dir == 1 :
@@ -63,4 +39,10 @@ for _ in range(K):
     for x, dd in rotate_arr:
         rotate(x,dd)
 
-print(arr[0][0] * 1 + arr[1][0] * 2 + arr[2][0] * 4 + arr[3][0] * 8)
+answer = [list(map(int, arr[i])) for i in range(len(arr))]
+# print(arr)
+result = 0
+for i in range(4):
+    result += answer[i][0] * (2 ** i)
+
+print(result)
